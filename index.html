@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JanSetu - Government Services Portal</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7fc;color:#182b45}
+header{background:#164b9b;color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header h2{margin:0;font-size:27px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav button{background:transparent;color:white;border:0;cursor:pointer;font-weight:bold;padding:9px}
+.hero{background:linear-gradient(120deg,#164b9b,#4389df);color:white;padding:65px 8%;text-align:center}
+.hero h1{font-size:38px;margin:0 0 15px}
+.hero p{font-size:17px;line-height:1.6}
+.search{padding:13px;width:min(420px,90%);border:0;border-radius:8px;margin:15px 5px}
+.btn{padding:12px 20px;border:0;border-radius:8px;background:#164b9b;color:white;cursor:pointer;font-weight:bold}
+.hero .btn{background:#fff;color:#164b9b}
+.container{padding:35px 7%;max-width:1200px;margin:auto}
+h2{color:#164b9b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:13px;box-shadow:0 3px 13px #163d6815}
+.card h3{margin-top:8px}
+.card p{color:#63748a;line-height:1.5;font-size:14px}
+.emoji{font-size:32px}
+.card button{margin-top:8px}
+.page{display:none}
+.page.active{display:block}
+input,select,textarea{width:100%;padding:12px;margin:8px 0 15px;border:1px solid #ccd7e5;border-radius:7px;font-size:15px}
+textarea{min-height:90px}
+form{max-width:600px}
+.result{background:#eaf3ff;padding:15px;border-radius:9px;margin-top:15px;line-height:1.6}
+footer{background:#123b76;color:white;text-align:center;padding:22px;margin-top:35px;font-size:13px}
+.status{color:#16845b;font-weight:bold}
+@media(max-width:600px){header{gap:15px}.hero h1{font-size:29px}.container{padding:25px 5%}}
+</style>
+</head>
+<body>
+
+<header>
+<h2>🏛️ JanSetu</h2>
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('services')">Services</button>
+<button onclick="showPage('schemes')">Schemes</button>
+<button onclick="showPage('tracking')">Tracking</button>
+<button onclick="showPage('assistant')">AI Assistant</button>
+<button onclick="showPage('grievance')">Grievance</button>
+</nav>
+</header>
+
+<section id="home" class="page active">
+<div class="hero">
+<h1>One Platform. Every Service.</h1>
+<p>Your one-stop digital gateway to government services.<br>
+Discover schemes, access services and track applications easily.</p>
+<input class="search" id="search" placeholder="Search government services...">
+<button class="btn" onclick="searchService()">Search</button>
+</div>
+
+<div class="container">
+<h2>What would you like to do?</h2>
+<div class="grid">
+<div class="card"><div class="emoji">📄</div><h3>Government Services</h3><p>Explore certificates and citizen services.</p><button class="btn" onclick="showPage('services')">Explore</button></div>
+<div class="card"><div class="emoji">🎓</div><h3>Scheme Finder</h3><p>Discover schemes based on your category.</p><button class="btn" onclick="showPage('schemes')">Find Schemes</button></div>
+<div class="card"><div class="emoji">📍</div><h3>Application Tracking</h3><p>Check your application progress.</p><button class="btn" onclick="showPage('tracking')">Track Now</button></div>
+<div class="card"><div class="emoji">🤖</div><h3>AI Assistance</h3><p>Get guidance about government services.</p><button class="btn" onclick="showPage('assistant')">Ask AI</button></div>
+</div>
+
+<h2>Additional Features</h2>
+<div class="grid">
+<div class="card"><h3>🎙️ Voice Assistance</h3><p>Voice-based help for easier access.</p><button class="btn" onclick="voiceHelp()">Try Voice</button></div>
+<div class="card"><h3>🔔 Smart Notifications</h3><p>Receive reminders for pending applications.</p><button class="btn" onclick="alert('Sample reminder: Check your pending application documents.')">View Alerts</button></div>
+<div class="card"><h3>📱 QR Verification</h3><p>Concept for quick certificate verification.</p><button class="btn" onclick="alert('QR verification feature demonstration. Live verification requires official integration.')">Explore</button></div>
+<div class="card"><h3>🏢 Nearby Centres</h3><p>Find government service centres.</p><button class="btn" onclick="alert('Nearby Taluk Office, CSC and Gram Panchayat listings can be integrated here.')">Find Centres</button></div>
+<div class="card"><h3>📅 Appointment Booking</h3><p>Plan visits to government offices.</p><button class="btn" onclick="alert('Appointment booking demo. Live booking requires department integration.')">Book Visit</button></div>
+<div class="card"><h3>🔐 Digital Locker</h3><p>Concept for secure document storage.</p><button class="btn" onclick="alert('Secure document storage would require authentication and encrypted storage.')">Explore</button></div>
+</div>
+</div>
+</section>
+
+<section id="services" class="page container">
+<h2>Government Services</h2>
+<div class="grid">
+<div class="card"><h3>📜 Income Certificate</h3><p>Guidance for income certificate applications.</p><button class="btn" onclick="alert('Identity proof, address proof and income documents may be required. Check your local authority.')">View Details</button></div>
+<div class="card"><h3>🏠 Residence Certificate</h3><p>Learn about residence certificate applications.</p><button class="btn" onclick="alert('Proof of residence and identity may be required. Confirm the official checklist.')">View Details</button></div>
+<div class="card"><h3>👨‍👩‍👧 Caste Certificate</h3><p>Understand the application requirements.</p><button class="btn" onclick="alert('Supporting records and identity documents may be needed. Requirements vary.')">View Details</button></div>
+<div class="card"><h3>🎓 Student Services</h3><p>Explore student and scholarship services.</p><button class="btn" onclick="showPage('schemes')">Explore</button></div>
+</div>
+</section>
+
+<section id="schemes" class="page container">
+<h2>Government Scheme Finder</h2>
+<p>Select your category to discover relevant scheme types.</p>
+<form onsubmit="findScheme(event)">
+<label>Choose your category</label>
+<select id="category">
+<option>Student</option>
+<option>Farmer</option>
+<option>Senior Citizen</option>
+<option>Women and Family</option>
+<option>Small Business Owner</option>
+</select>
+<button class="btn">Find Schemes</button>
+</form>
+<div id="schemeResult" class="result" hidden></div>
+<p>Note: These are illustrative scheme categories, not verified eligibility results. Check official government portals for current rules.</p>
+</section>
+
+<section id="tracking" class="page container">
+<h2>Track Your Application</h2>
+<form onsubmit="trackApplication(event)">
+<label>Application Reference Number</label>
+<input id="applicationId" placeholder="Example: JS202600123" required>
+<button class="btn">Check Status</button>
+</form>
+<div id="trackResult"></div>
+<p>Demo only: This page does not connect to government databases.</p>
+</section>
+
+<section id="assistant" class="page container">
+<h2>🤖 JanSetu AI Assistant</h2>
+<div class="card">
+<p id="chatHistory">Namaste! Welcome to JanSetu. Ask me about certificates, schemes or applications.</p>
+<input id="question" placeholder="Type your question...">
+<button class="btn" onclick="askAssistant()">Send Message</button>
+<button class="btn" onclick="voiceHelp()">🎙️ Speak</button>
+</div>
+</section>
+
+<section id="grievance" class="page container">
+<h2>Public Grievance Redressal</h2>
+<p>Submit a sample complaint about a government service.</p>
+<form onsubmit="submitGrievance(event)">
+<label>Complaint Category</label>
+<select>
+<option>Application Delay</option>
+<option>Website Problem</option>
+<option>Service Centre Issue</option>
+<option>Other</option>
+</select>
+<label>Describe your issue</label>
+<textarea id="complaint" placeholder="Enter your complaint..." required></textarea>
+<button class="btn">Submit Grievance</button>
+</form>
+<div id="grievanceResult"></div>
+</section>
+
+<footer>
+<p><b>JanSetu – One Platform. Every Service.</b></p>
+<p>INNOVEX26 Project Prototype | Simplifying Digital Governance</p>
+<p>Concept demonstration only. Not an official government portal.</p>
+</footer>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+
+function searchService(){
+let q=document.getElementById('search').value.toLowerCase();
+showPage('services');
+let cards=document.querySelectorAll('#services .card');
+let found=0;
+cards.forEach(c=>{
+let match=c.innerText.toLowerCase().includes(q);
+c.style.display=(!q||match)?'block':'none';
+if(!q||match)found++;
+});
+if(!found)alert('No matching service found. Try income, residence, caste or student.');
+}
+
+function findScheme(e){
+e.preventDefault();
+let category=document.getElementById('category').value;
+let suggestions={
+'Student':'Scholarship and education support schemes.',
+'Farmer':'Agriculture, crop insurance and farmer welfare schemes.',
+'Senior Citizen':'Pension, healthcare and senior citizen welfare schemes.',
+'Women and Family':'Women empowerment and family welfare schemes.',
+'Small Business Owner':'Entrepreneurship and small business support schemes.'
+};
+let box=document.getElementById('schemeResult');
+box.hidden=false;
+box.innerHTML='<b>Suggested category: '+category+'</b><br>'+suggestions[category]+'<br><br>Check official government portals to verify eligibility.';
+}
+
+function trackApplication(e){
+e.preventDefault();
+let id=document.getElementById('applicationId').value;
+document.getElementById('trackResult').innerHTML=
+'<div class="result"><b>Application: '+id+'</b><br><br>'+
+'<span class="status">✓ Application Submitted</span><br><br>'+
+'<span class="status">✓ Documents Received</span><br><br>'+
+'⏳ Verification in Progress<br><br>'+
+'○ Final Decision Pending</div>';
+}
+
+function askAssistant(){
+let q=document.getElementById('question').value.trim();
+if(!q)return;
+let reply='I can guide you with government services. Please check the relevant service section and confirm current requirements with the official department.';
+if(q.toLowerCase().includes('income'))reply='For an income certificate, identity proof, address proof and income-related documents may be required. Check your local authority for the exact list.';
+else if(q.toLowerCase().includes('scheme'))reply='Use the Scheme Finder to explore categories relevant to you. Eligibility must be verified on official portals.';
+else if(q.toLowerCase().includes('track'))reply='Open Application Tracking and enter your application reference number to view the sample status.';
+document.getElementById('chatHistory').innerHTML=
+'<b>You:</b> '+q+'<br><br><b>JanSetu Assistant:</b> '+reply;
+document.getElementById('question').value='';
+}
+
+function voiceHelp(){
+if(!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)){
+alert('Voice recognition is not supported in this browser. Try Chrome.');
+return;
+}
+let Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+let recognition=new Recognition();
+recognition.lang='en-IN';
+recognition.onresult=function(event){
+document.getElementById('question').value=event.results[0][0].transcript;
+showPage('assistant');
+};
+recognition.start();
+}
+
+function submitGrievance(e){
+e.preventDefault();
+document.getElementById('grievanceResult').innerHTML=
+'<div class="result"><b>Demo grievance registered!</b><br>Reference Number: GRV-DEMO-001<br>This is a sample acknowledgement. No official complaint was submitted.</div>';
+document.getElementById('complaint').value='';
+}
+</script>
+</body>
+</html>
